@@ -1,0 +1,4 @@
+# ninja log v5
+1	32	1645187118772712729	build.ninja	d3b0e523253483ee
+0	28	1645187118805954033	CMakeFiles/Hello_World.dir/hello_server.c.o	4dee366be6a799fe
+28	56	1645187118834713866	Hello_World	5fb045d3eda206c0
