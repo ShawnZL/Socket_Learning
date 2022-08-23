@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: Fd_seri
+# Project: FD_Seri
 # Configurations: Debug
 # =============================================================================
 
@@ -39,13 +39,13 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /Users/shawnzhao/Code/Socket_Learning/Fd_seri/cmake-build-debug/
+cmake_ninja_workdir = /Users/shawnzhao/Code/Socket_Learning/FD_Seri/cmake-build-debug/
 
 #############################################
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/shawnzhao/Code/Socket_Learning/Fd_seri/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/shawnzhao/Code/Socket_Learning/Fd_seri -B/Users/shawnzhao/Code/Socket_Learning/Fd_seri/cmake-build-debug
+  COMMAND = cd /Users/shawnzhao/Code/Socket_Learning/FD_Seri/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/shawnzhao/Code/Socket_Learning/FD_Seri -B/Users/shawnzhao/Code/Socket_Learning/FD_Seri/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -57,45 +57,45 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/shawnzhao/Code/Socket_Learning/Fd_seri/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /Users/shawnzhao/Code/Socket_Learning/FD_Seri/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
 build edit_cache: phony CMakeFiles/edit_cache.util
 
 # =============================================================================
-# Object build statements for EXECUTABLE target Fd_seri
+# Object build statements for EXECUTABLE target FD_Seri
 
 
 #############################################
-# Order-only phony target for Fd_seri
+# Order-only phony target for FD_Seri
 
-build cmake_object_order_depends_target_Fd_seri: phony || CMakeFiles/Fd_seri.dir
+build cmake_object_order_depends_target_FD_Seri: phony || CMakeFiles/FD_Seri.dir
 
-build CMakeFiles/Fd_seri.dir/main.c.o: C_COMPILER__Fd_seri_Debug /Users/shawnzhao/Code/Socket_Learning/Fd_seri/main.c || cmake_object_order_depends_target_Fd_seri
-  DEP_FILE = CMakeFiles/Fd_seri.dir/main.c.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu99
-  OBJECT_DIR = CMakeFiles/Fd_seri.dir
-  OBJECT_FILE_DIR = CMakeFiles/Fd_seri.dir
-  TARGET_COMPILE_PDB = CMakeFiles/Fd_seri.dir/
-  TARGET_PDB = Fd_seri.pdb
+build CMakeFiles/FD_Seri.dir/main.c.o: C_COMPILER__FD_Seri_Debug /Users/shawnzhao/Code/Socket_Learning/FD_Seri/main.c || cmake_object_order_depends_target_FD_Seri
+  DEP_FILE = CMakeFiles/FD_Seri.dir/main.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu99
+  OBJECT_DIR = CMakeFiles/FD_Seri.dir
+  OBJECT_FILE_DIR = CMakeFiles/FD_Seri.dir
+  TARGET_COMPILE_PDB = CMakeFiles/FD_Seri.dir/
+  TARGET_PDB = FD_Seri.pdb
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target Fd_seri
+# Link build statements for EXECUTABLE target FD_Seri
 
 
 #############################################
-# Link the executable Fd_seri
+# Link the executable FD_Seri
 
-build Fd_seri: C_EXECUTABLE_LINKER__Fd_seri_Debug CMakeFiles/Fd_seri.dir/main.c.o
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk
-  OBJECT_DIR = CMakeFiles/Fd_seri.dir
+build FD_Seri: C_EXECUTABLE_LINKER__FD_Seri_Debug CMakeFiles/FD_Seri.dir/main.c.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/FD_Seri.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/Fd_seri.dir/
-  TARGET_FILE = Fd_seri
-  TARGET_PDB = Fd_seri.pdb
+  TARGET_COMPILE_PDB = CMakeFiles/FD_Seri.dir/
+  TARGET_FILE = FD_Seri
+  TARGET_PDB = FD_Seri.pdb
 
 # =============================================================================
 # Target aliases.
@@ -106,9 +106,9 @@ build Fd_seri: C_EXECUTABLE_LINKER__Fd_seri_Debug CMakeFiles/Fd_seri.dir/main.c.
 # =============================================================================
 
 #############################################
-# Folder: /Users/shawnzhao/Code/Socket_Learning/Fd_seri/cmake-build-debug
+# Folder: /Users/shawnzhao/Code/Socket_Learning/FD_Seri/cmake-build-debug
 
-build all: phony Fd_seri
+build all: phony FD_Seri
 
 # =============================================================================
 # Built-in targets
