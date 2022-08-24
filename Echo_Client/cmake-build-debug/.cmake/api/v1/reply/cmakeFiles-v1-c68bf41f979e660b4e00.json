@@ -605,8 +605,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/Users/shawnzhao/Code/Socket_Learning/Tcp_Client/cmake-build-debug",
-		"source" : "/Users/shawnzhao/Code/Socket_Learning/Tcp_Client"
+		"build" : "/Users/shawnzhao/Code/Socket_Learning/Echo_Client/cmake-build-debug",
+		"source" : "/Users/shawnzhao/Code/Socket_Learning/Echo_Client"
 	},
 	"version" : 
 	{

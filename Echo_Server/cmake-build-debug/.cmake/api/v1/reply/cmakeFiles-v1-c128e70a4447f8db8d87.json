@@ -605,8 +605,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/Users/shawnzhao/Code/Socket_Learning/Hello_Server/cmake-build-debug",
-		"source" : "/Users/shawnzhao/Code/Socket_Learning/Hello_Server"
+		"build" : "/Users/shawnzhao/Code/Socket_Learning/Echo_Server/cmake-build-debug",
+		"source" : "/Users/shawnzhao/Code/Socket_Learning/Echo_Server"
 	},
 	"version" : 
 	{
