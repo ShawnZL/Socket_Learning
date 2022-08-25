@@ -1,17 +1,19 @@
 #include <stdio.h> //standard input & output
 #include <stdlib.h> //standard library
 #include <string.h>
+#include <ctype.h>
 #include <unistd.h> // 系统封装调用
 #include <arpa/inet.h>
 #include <sys/socket.h>
 #define BUF_SIZE 1024
+#define OPSZ 4
 void error_handling(char *message);
-
+int calculate(int opnum, int opnds[], char operator);
 int main(int argc, char *argv[]) {
     int serv_sock, clnt_sock;
-    char message[BUF_SIZE];
-    int str_len, i;
-
+    int recv_len, recv_cnt;
+    char opinfo[BUF_SIZE];
+    int result, opnd_cnt, i;
     struct sockaddr_in serv_addr, clnt_addr;
     socklen_t clnt_addr_size;
 
@@ -37,19 +39,40 @@ int main(int argc, char *argv[]) {
         error_handling("listen() error");
 
     clnt_addr_size = sizeof(clnt_addr);
-    for (i = 0; i < 5; ++i) {
-        clnt_sock = accept(serv_sock, (struct sockaddr*) &clnt_addr, &clnt_addr_size);
 
-        if (clnt_sock == -1)
-            error_handling("accept() error");
-        else
-            printf("Connected Client %d \n", i + 1);
-        while ((str_len = read(clnt_sock, message, BUF_SIZE)) != 0)
-            write(clnt_sock, message, sizeof(message));
+    for (i = 0; i < 1; ++i) {
+        opnd_cnt = 0;
+        clnt_sock = accept(serv_sock, (struct sockaddr*) &clnt_addr, &clnt_addr_size);
+        read(clnt_sock, &opnd_cnt, 1); // 统计个数
+
+        recv_len = 0;
+        while ((opnd_cnt*OPSZ+1) > recv_len) {
+            recv_cnt = read(clnt_sock, &opinfo[recv_len], BUF_SIZE - 1);
+            recv_len += recv_cnt;
+        }
+        result = calculate(opnd_cnt, (int*)opinfo, opinfo[recv_len-1]);
+        write(clnt_sock, (char*)&result, sizeof(result));
         close(clnt_sock);
     }
     close(serv_sock);
     return 0;
+}
+
+int calculate(int opnum, int opnds[], char op) {
+    int result = opnds[0], i;
+    switch(op)
+    {
+        case '+':
+            for (i = 1; i < opnum; ++i) result += opnds[i];
+            break;
+        case '-':
+            for (i = 1; i < opnum; ++i) result -= opnds[i];
+            break;
+        case '*':
+            for (i = 1; i < opnum; ++i) result *= opnds[i];
+            break;
+    }
+    return result;
 }
 
 void error_handling(char *messgae) {

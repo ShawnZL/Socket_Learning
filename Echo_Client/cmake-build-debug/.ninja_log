@@ -1,0 +1,4 @@
+# ninja log v5
+0	30	1661341537292430567	build.ninja	62a56493ed7b34ed
+0	39	1661341537335547541	CMakeFiles/Echo_Client.dir/main.c.o	92f12827d5c4e0f0
+39	74	1661341537371749002	Echo_Client	60efeaff61e722aa
