@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
     socklen_t clnt_adr_sz;
 
     if (argc != 2) {
-        fputs("Usage: %s <port>\n", argv[0]);
+        printf("Usage: %s <port>\n", argv[0]);
         exit(1);
     }
     fp = fopen("main.c", "rb");
@@ -35,19 +35,14 @@ int main(int argc, char *argv[]) {
         error_handling("accept() error");
     while(1) {
         read_cnt = fread((void*)buf, 1, BUF_SIZE, fp);
-        printf("1.1");
         if (read_cnt < BUF_SIZE) {
             write(clnt_sd, buf, read_cnt);
             break;
         }
-        printf("1.2");
         write(clnt_sd, buf, BUF_SIZE);
     }
-    printf("0");
     shutdown(clnt_sd, SHUT_WR);
-    printf("1");
     read(clnt_sd, buf, BUF_SIZE);
-    printf("2");
     printf("Message from client: %s\n", buf);
     fclose(fp);
     close(clnt_sd); close(serv_sd);
