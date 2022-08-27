@@ -1,0 +1,7 @@
+# ninja log v5
+0	43	1661583280817894795	CMakeFiles/Uecho_con_client.dir/main.c.o	54ee030138a0e9dc
+44	78	1661583280853456742	Uecho_con_client	b0c0bcd9bfc75e98
+1	40	1661583408204257266	CMakeFiles/Uecho_con_client.dir/main.c.o	54ee030138a0e9dc
+40	73	1661583408238816407	Uecho_con_client	b0c0bcd9bfc75e98
+1	42	1661583570502695694	CMakeFiles/Uecho_con_client.dir/main.c.o	54ee030138a0e9dc
+42	74	1661583570536084705	Uecho_con_client	b0c0bcd9bfc75e98

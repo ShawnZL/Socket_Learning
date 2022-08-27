@@ -27,7 +27,7 @@ int main(int argc, char* argv[]) {
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_addr.s_addr = inet_addr(argv[1]);
     serv_addr.sin_port = htons(atoi(argv[2]));
-
+    printf("fromIP: %s\n", inet_ntoa(*((struct in_addr*)&from_adr.sin_addr)));
     while (1) {
         fputs("Insert message(q to quit): ", stdout);
         fgets(message, sizeof(message), stdin);
@@ -38,6 +38,8 @@ int main(int argc, char* argv[]) {
         adr_sz = sizeof(from_adr);
         str_len = recvfrom(sock, message, BUF_SIZE, 0, (struct sockaddr*)&from_adr, &adr_sz);
         message[str_len] = 0;
+        //输出from_addr
+        printf("fromIP: %s\n", inet_ntoa(*((struct in_addr*)&from_adr.sin_addr)));
         printf("Message from server: %s", message);
     }
     close(sock);
