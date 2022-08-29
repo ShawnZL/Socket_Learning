@@ -1,0 +1,5 @@
+# ninja log v5
+0	44	1661762988779908135	CMakeFiles/Gethostbyname.dir/main.c.o	67cb631f595572ca
+45	73	1661762988809999123	Gethostbyname	ccf341bcdd381c2a
+0	31	1661763089921362094	CMakeFiles/Gethostbyname.dir/main.c.o	67cb631f595572ca
+31	60	1661763089951795045	Gethostbyname	ccf341bcdd381c2a
