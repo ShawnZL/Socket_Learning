@@ -1,31 +1,47 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <unistd.h>
-#include <arpa/inet.h>
-#include <sys/socket.h>
-#define BUF_SIZE 30
-void error_handling(char *message);
+#include <signal.h>
+#include <sys/wait.h>
+
+void read_chilldproc(int sig) {
+    int status;
+    pid_t id = waitpid(-1, &status, WNOHANG);
+    if (WIFEXITED(status)) {
+        printf("Removed proc id: %d \n", id);
+        printf("Child send: %d \n", WEXITSTATUS(status));
+    }
+}
 
 int main(int argc, char *argv[]) {
-    int sd;
-    FILE *fp;
-    char buf[BUF_SIZE];
-    struct sockaddr_in serv_adr;
-    if (argc != 3) {
-        exit(1);
+    pid_t pid;
+    struct sigaction act;
+    act.sa_handler = read_chilldproc;
+    sigemptyset(&act.sa_mask);
+    act.sa_flags=0;
+    sigaction(SIGCHLD, &act, 0);
+    pid = fork();
+    if (pid == 0) {// 子进程
+        puts("Hi! I`m child process");
+        sleep(10);
+        return 12;
     }
-    sd = socket(PF_INET, SOCK_STREAM, 0);
-    memset(&serv_adr, 0, sizeof(serv_adr));
-    serv_adr.sin_family = AF_INET;
-    serv_adr.sin_addr.s_addr = inet_addr(argv[1]);
-    serv_adr.sin_port = htonl(atoi(argv[2]));
-
-    connect(sd, (struct sockaddr*)&serv_adr, sizeof(serv_adr));
-    
-}
-void error_handling(char *messgae) {
-    fputs(messgae, stderr);
-    fputc('\n', stderr);
-    exit(1);
+    else {//父进程
+        printf("Child proc id: %d \n", pid);
+        pid = fork();
+        if (pid == 0) {
+            puts("Hi! I`m child porcess");
+            sleep(10);
+            exit(24);
+        }
+        else {
+            int i;
+            printf("Child proc id: %d \n", pid);
+            for (i = 0; i < 5; ++i) {
+                puts("wait...");
+                sleep(5);
+            }
+        }
+    }
+    return 0;
 }
