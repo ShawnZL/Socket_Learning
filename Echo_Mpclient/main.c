@@ -31,9 +31,9 @@ int main(int argc, char *argv[]) {
     }
     pid = fork();
     if (pid == 0) // 子进程
-        read_routine(sock, buf);
-    else // 父进程
         write_routine(sock, buf);
+    else // 父进程
+        read_routine(sock, buf);
     return 0;
 }
 
