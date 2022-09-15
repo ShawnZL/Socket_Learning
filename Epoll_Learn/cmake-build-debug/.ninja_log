@@ -1,0 +1,5 @@
+# ninja log v5
+0	112	1663233021674978124	CMakeFiles/Epoll_Learn.dir/main.c.o	302abeacaed5a7e8
+112	152	1663233021715685258	Epoll_Learn	e8235f9cb90defa9
+0	26	1663233106462976805	CMakeFiles/Epoll_Learn.dir/main.c.o	302abeacaed5a7e8
+26	55	1663233106492843689	Epoll_Learn	e8235f9cb90defa9
