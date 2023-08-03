@@ -39,6 +39,7 @@ int main(int argc, char* argv[]) {
         if (!strcmp(message, "q\n") || !strcmp(message, "Q\n"))
             break;
         write(sock, message, strlen(message));
+        str_len = strlen(message); // 设置str_len为消息长度
         recv_len = 0;
         while (recv_len < str_len) {
             recv_cnt = read(sock, &message[recv_len], BUF_SIZE - 1);
